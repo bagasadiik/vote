@@ -56,9 +56,9 @@
     html { margin-top: 0 !important; }
     body.admin-bar { padding-top: 0 !important; }
     #wpadminbar { display: none !important; }
-    body > header:not(.icctf-app .site-header),
+    body > header,
     body > footer,
-    #masthead, .site-header:not(.icctf-app .site-header),
+    #masthead, .site-header,
     .site-footer, #colophon,
     .wp-block-template-part { display: none !important; }
 
@@ -100,32 +100,6 @@
     .icctf-app html { scroll-behavior: smooth; }
     .icctf-app img { display: block; width: 100%; height: 100%; object-fit: cover; }
     .icctf-app a { text-decoration: none; color: inherit; }
-
-    /* Header */
-    .icctf-app .site-header {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(255,255,255,.88);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--color-border);
-    }
-    .icctf-app .nav-inner {
-      max-width: var(--max-w); margin: 0 auto; padding: 0 24px;
-      height: 66px; display: flex; align-items: center;
-      justify-content: space-between; gap: 24px;
-    }
-    .icctf-app .nav-logo { font-size: 1.25rem; font-weight: 800; letter-spacing: -.5px; }
-    .icctf-app .nav-logo span { color: var(--color-accent); }
-    .icctf-app .nav-links { display: flex; gap: 32px; list-style: none; }
-    .icctf-app .nav-links a { font-size: .875rem; font-weight: 500; color: var(--color-muted); transition: color var(--transition); }
-    .icctf-app .nav-links a:hover, .icctf-app .nav-links a.active { color: var(--color-accent); }
-    .icctf-app .nav-cta {
-      background: var(--color-accent); color: #fff !important;
-      padding: 8px 20px; border-radius: 8px; font-size: .8125rem; font-weight: 600;
-      transition: opacity var(--transition), transform var(--transition);
-    }
-    .icctf-app .nav-cta:hover { opacity: .88; transform: translateY(-1px); }
-    .icctf-app .nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; flex-direction: column; gap: 5px; }
-    .icctf-app .nav-hamburger span { display: block; width: 24px; height: 2.5px; background: var(--color-primary); border-radius: 2px; }
 
     /* Hero */
     .icctf-app .hero {
@@ -249,8 +223,6 @@
 
     /* Responsive */
     @media (max-width: 768px) {
-      .icctf-app .nav-links { display: none; }
-      .icctf-app .nav-hamburger { display: flex; }
       .icctf-app .hero { padding: 56px 20px 48px; }
       .icctf-app .card.featured { flex-direction: column; }
       .icctf-app .card.featured .card-thumb { width: 100%; padding-top: 52%; min-height: unset; }
@@ -270,23 +242,6 @@
 <!-- SEMUA konten dibungkus dalam .icctf-app supaya CSS scope kuat
      dan tidak terpengaruh tema WordPress. -->
 <div class="icctf-app">
-
-  <header class="site-header">
-    <nav class="nav-inner">
-      <a href="https://www.icctf.or.id" class="nav-logo">ICCTF<span>.</span></a>
-      <ul class="nav-links">
-        <li><a href="https://www.icctf.or.id">Home</a></li>
-        <li><a href="https://www.icctf.or.id/about">About</a></li>
-        <li><a href="https://www.icctf.or.id/programs">Programs</a></li>
-        <li><a href="https://www.icctf.or.id/references" class="active">References</a></li>
-        <li><a href="https://www.icctf.or.id/contact">Contact</a></li>
-        <li><a href="#" class="nav-cta">Get Involved</a></li>
-      </ul>
-      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-    </nav>
-  </header>
 
   <section class="hero">
     <div class="hero-inner">
@@ -666,13 +621,6 @@ window.addEventListener('scroll', () => {
   backTop.classList.toggle('visible', window.scrollY > 400);
 }, { passive: true });
 backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-document.getElementById('hamburger').addEventListener('click', () => {
-  const links = document.querySelector('.icctf-app .nav-links');
-  const open = links.style.display === 'flex';
-  links.style.cssText = open ? ''
-    : 'display:flex;flex-direction:column;position:absolute;top:66px;left:0;right:0;background:#fff;padding:16px 24px 24px;border-bottom:1px solid var(--color-border);gap:16px;z-index:99;';
-});
 
 function animateCounter(el, target) {
   let cur = 0;
