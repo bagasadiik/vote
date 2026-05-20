@@ -9,9 +9,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
     /* ═══════════════════════════════════════════════════════════════════
-       WORDPRESS THEME ISOLATION (HARDENED)
-       Mencegah seluruh style dari tema WordPress / Elementor / plugin
-       apapun "bocor" ke halaman References ini.
+       WORDPRESS THEME ISOLATION (CONTENT-ONLY)
+       Hanya melindungi style KONTEN halaman References dari tema WordPress.
+       Header & footer tema WP DIBIARKAN tampil seperti biasa.
        Semua style page kita di-scope di bawah `.icctf-app`.
        ═══════════════════════════════════════════════════════════════════ */
 
@@ -51,68 +51,15 @@
       box-shadow: none !important;
     }
 
-    /* 3) Menyembunyikan admin bar + header/menu/footer tema WordPress
-          jika halaman ini di-load di dalam template tema.
-          Daftar selector di bawah meng-cover berbagai tema populer:
-          Astra, GeneratePress, OceanWP, Storefront, Twenty-XX, Hello Elementor,
-          Divi, Avada, Bricks, Kadence, Neve, plus semua header Elementor. */
-    html { margin-top: 0 !important; }
-    body.admin-bar { padding-top: 0 !important; }
-    #wpadminbar { display: none !important; }
+    /* 3) Header & footer tema WordPress DIBIARKAN tampil seperti biasa
+          (sesuai permintaan user: munculkan header bawaan WP).
+          Hanya sembunyikan admin bar saja kalau user belum login. */
+    body.admin-bar #wpadminbar { /* admin bar tetap tampil untuk admin */ }
 
-    /* HEADER / NAV / MENU dari tema WordPress */
-    body > header,
-    body > nav,
-    body > .header,
-    body > .navbar,
-    #masthead, #header, #site-header, #top-bar, #top, #topbar,
-    .site-header, .site-branding, .main-header, .main-navigation,
-    .header-main, .header-wrapper, .header-bar, .header-area,
-    .navbar, .top-bar, .top-header, .menu-bar, .primary-menu,
-    .wp-block-template-part[data-type="wp_template_part"][data-area="header"],
-    .wp-block-template-part.site-header,
-
-    /* Elementor headers */
-    .elementor-location-header,
-    [data-elementor-type="header"],
-    .elementor-header,
-    .elementor-sticky,
-    header.elementor-section,
-    header.elementor,
-
-    /* Theme-specific headers */
-    .ast-header-break-point .main-header-bar-wrap,  /* Astra */
-    .site-header-wrap,                                /* GeneratePress */
-    #site-navigation-wrap,                            /* OceanWP */
-    .et_header_style_default,                         /* Divi */
-    .fusion-header-wrapper,                           /* Avada */
-    .brxe-header,                                     /* Bricks */
-    .header-wrap,                                     /* Kadence */
-    .nv-navbar,                                       /* Neve */
-
-    /* FOOTER tema */
-    body > footer,
-    #colophon, #footer, #site-footer,
-    .site-footer, .footer-main, .main-footer, .footer-wrapper,
-    .elementor-location-footer,
-    [data-elementor-type="footer"] {
-      display: none !important;
-      visibility: hidden !important;
-      height: 0 !important;
-      max-height: 0 !important;
-      overflow: hidden !important;
-      position: absolute !important;
-      pointer-events: none !important;
-      opacity: 0 !important;
-    }
-
-    /* 4) Reset body/html agar full-bleed. */
-    html, body {
-      margin: 0 !important;
-      padding: 0 !important;
+    /* 4) Reset body agar background & overflow konsisten,
+          tanpa mengganggu header/footer tema. */
+    body {
       background: #f5f7f5 !important;
-      width: 100% !important;
-      max-width: none !important;
       overflow-x: hidden;
     }
 
@@ -337,49 +284,6 @@
   </footer>
 
 </div><!-- /.icctf-app -->
-
-<script>
-/* ═══════════════════════════════════════════════════════════════════════
-   THEME HEADER/FOOTER KILLER (JS SAFETY NET)
-   Berjalan secepat mungkin (tidak menunggu DOMContentLoaded penuh)
-   untuk membersihkan elemen <header>, <nav>, dan footer tema WordPress
-   yang berada DI LUAR wrapper .icctf-app.
-   ═══════════════════════════════════════════════════════════════════════ */
-(function killThemeChrome() {
-  function clean() {
-    var app = document.querySelector('.icctf-app');
-    var bodyChildren = document.body ? document.body.children : [];
-    for (var i = 0; i < bodyChildren.length; i++) {
-      var el = bodyChildren[i];
-      if (el === app) continue;
-      if (el.tagName === 'SCRIPT' || el.tagName === 'STYLE' || el.tagName === 'NOSCRIPT') continue;
-      var tag = el.tagName.toLowerCase();
-      var cls = (el.className || '') + ' ' + (el.id || '');
-      if (
-        tag === 'header' || tag === 'nav' || tag === 'footer' ||
-        /header|menu|nav|topbar|masthead|colophon|footer|site-branding/i.test(cls)
-      ) {
-        el.style.setProperty('display', 'none', 'important');
-        el.style.setProperty('visibility', 'hidden', 'important');
-        el.setAttribute('aria-hidden', 'true');
-      }
-    }
-  }
-  // Coba langsung
-  if (document.body) clean();
-  // Jalankan lagi saat DOM siap
-  document.addEventListener('DOMContentLoaded', clean);
-  // Jalankan sekali lagi setelah load (untuk header yang di-inject lazy)
-  window.addEventListener('load', clean);
-  // Observer untuk tema yang inject header secara dinamis
-  if (window.MutationObserver) {
-    var obs = new MutationObserver(clean);
-    document.addEventListener('DOMContentLoaded', function () {
-      obs.observe(document.body, { childList: true, subtree: false });
-    });
-  }
-})();
-</script>
 
 <script>
 /* ═══════════════════════════════════════════════════════════════════════
