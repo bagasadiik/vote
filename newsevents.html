@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>News &amp; Events &ndash; ICCTF</title>
+  <meta name="description" content="Berita, liputan media, dan kegiatan terbaru Indonesia Climate Change Trust Fund (ICCTF)." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='10' fill='%2337B243'/%3E%3Ctext x='12' y='16' font-family='Arial,sans-serif' font-size='12' font-weight='700' fill='%23fff' text-anchor='middle'%3EI%3C/text%3E%3C/svg%3E" type="image/svg+xml" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    /* ═══════════════════════════════════════════════════════════════════
+       WORDPRESS THEME ISOLATION (HARDENED)
+       Mencegah seluruh style dari tema WordPress / Elementor / plugin
+       apapun "bocor" ke halaman News & Events ini.
+       Semua style page kita di-scope di bawah `.icctf-app`.
+       ═══════════════════════════════════════════════════════════════════ */
+
+    /* 1) Hard reset semua elemen di dalam wrapper aplikasi. */
+    .icctf-app,
+    .icctf-app *,
+    .icctf-app *::before,
+    .icctf-app *::after {
+      all: revert;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-family: 'Poppins', sans-serif;
+      line-height: inherit;
+      vertical-align: baseline;
+    }
+
+    /* 2) Menetralkan wrapper umum WordPress / Elementor / page builders. */
+    .site, .site-content, .entry-content, .entry-header, .page-content,
+    .wp-site-blocks, .is-layout-constrained, .is-layout-flow,
+    #page, #content, #primary, #main, .container, .wrapper, .post,
+    .elementor, .elementor-inner, .elementor-section-wrap,
+    .elementor-section, .elementor-container, .elementor-row,
+    .elementor-column, .elementor-widget, .elementor-element,
+    .elementor-widget-container, .elementor-widget-wrap,
+    .e-con, .e-con-inner, .e-parent {
+      max-width: none !important;
+      width: 100% !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      float: none !important;
+      background: transparent !important;
+      box-shadow: none !important;
+    }
+
+    /* 3) Sembunyikan admin bar + header/footer tema WordPress jika
+          halaman ini di-load di dalam template tema. */
+    html { margin-top: 0 !important; }
+    body.admin-bar { padding-top: 0 !important; }
+    #wpadminbar { display: none !important; }
+    body > header:not(.icctf-app .site-header),
+    body > footer,
+    #masthead, .site-header:not(.icctf-app .site-header),
+    .site-footer, #colophon,
+    .wp-block-template-part { display: none !important; }
+
+    /* 4) Reset body/html agar full-bleed. */
+    html, body {
+      margin: 0 !important;
+      padding: 0 !important;
+      background: #f5f7f5 !important;
+      width: 100% !important;
+      max-width: none !important;
+      overflow-x: hidden;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════════
+       APP STYLES (semua di-scope ke .icctf-app)
+       ═══════════════════════════════════════════════════════════════════ */
+    .icctf-app {
+      isolation: isolate;
+      font-family: 'Poppins', sans-serif;
+      color: #1B2629;
+      line-height: 1.6;
+      --color-primary: #1B2629;
+      --color-accent: #37B243;
+      --color-accent-dk: #1B9b2a;
+      --color-accent-lt: #e8f7e9;
+      --color-bg: #f5f7f5;
+      --color-surface: #ffffff;
+      --color-muted: #6b7b80;
+      --color-border: #e2e8e4;
+      --radius-card: 14px;
+      --radius-tag: 6px;
+      --shadow-card: 0 2px 12px rgba(27,38,41,.07);
+      --shadow-hover: 0 8px 28px rgba(27,38,41,.14);
+      --transition: .22s cubic-bezier(.4,0,.2,1);
+      --font: 'Poppins', sans-serif;
+      --max-w: 1180px;
+    }
+    .icctf-app html { scroll-behavior: smooth; }
+    .icctf-app img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .icctf-app a { text-decoration: none; color: inherit; }
+
+    /* Header */
+    .icctf-app .site-header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .icctf-app .nav-inner {
+      max-width: var(--max-w); margin: 0 auto; padding: 0 24px;
+      height: 66px; display: flex; align-items: center;
+      justify-content: space-between; gap: 24px;
+    }
+    .icctf-app .nav-logo { font-size: 1.25rem; font-weight: 800; letter-spacing: -.5px; }
+    .icctf-app .nav-logo span { color: var(--color-accent); }
+    .icctf-app .nav-links { display: flex; gap: 32px; list-style: none; }
+    .icctf-app .nav-links a { font-size: .875rem; font-weight: 500; color: var(--color-muted); transition: color var(--transition); }
+    .icctf-app .nav-links a:hover, .icctf-app .nav-links a.active { color: var(--color-accent); }
+    .icctf-app .nav-cta {
+      background: var(--color-accent); color: #fff !important;
+      padding: 8px 20px; border-radius: 8px; font-size: .8125rem; font-weight: 600;
+      transition: opacity var(--transition), transform var(--transition);
+    }
+    .icctf-app .nav-cta:hover { opacity: .88; transform: translateY(-1px); }
+    .icctf-app .nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; flex-direction: column; gap: 5px; }
+    .icctf-app .nav-hamburger span { display: block; width: 24px; height: 2.5px; background: var(--color-primary); border-radius: 2px; }
+
+    /* Hero */
+    .icctf-app .hero {
+      background: linear-gradient(135deg, #1B2629 0%, #2c4a30 60%, #37B243 100%);
+      padding: 80px 24px 72px; text-align: center; position: relative; overflow: hidden;
+    }
+    .icctf-app .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .icctf-app .hero-inner { position: relative; max-width: 760px; margin: 0 auto; }
+    .icctf-app .hero-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2);
+      color: #a8e6ad; font-size: .75rem; font-weight: 600;
+      letter-spacing: .06em; text-transform: uppercase;
+      padding: 6px 14px; border-radius: 50px; margin-bottom: 20px;
+    }
+    .icctf-app .hero-badge svg { width: 14px; height: 14px; }
+    .icctf-app .hero h1 { font-size: clamp(2rem, 5vw, 3.1rem); font-weight: 800; color: #fff; line-height: 1.15; margin-bottom: 16px; letter-spacing: -.5px; }
+    .icctf-app .hero h1 em { font-style: normal; color: #6dd97a; }
+    .icctf-app .hero p { font-size: 1.0625rem; color: rgba(255,255,255,.78); max-width: 560px; margin: 0 auto 32px; }
+    .icctf-app .hero-stats { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+    .icctf-app .hero-stat { text-align: center; }
+    .icctf-app .hero-stat strong { display: block; font-size: 1.75rem; font-weight: 800; color: #fff; }
+    .icctf-app .hero-stat span { font-size: .8125rem; color: rgba(255,255,255,.6); font-weight: 500; }
+
+    /* Filter / control bar */
+    .icctf-app .filter-bar {
+      background: var(--color-surface);
+      border-bottom: 1px solid var(--color-border);
+      position: sticky; top: 66px; z-index: 90;
+    }
+    .icctf-app .filter-inner {
+      max-width: var(--max-w); margin: 0 auto;
+      padding: 14px 24px;
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .icctf-app .filter-pills {
+      display: flex; gap: 8px; flex-wrap: wrap; flex: 1; min-width: 0;
+    }
+    .icctf-app .pill {
+      font-family: var(--font); font-size: .8125rem; font-weight: 600;
+      padding: 7px 14px; border-radius: 50px;
+      background: var(--color-bg); color: var(--color-muted);
+      border: 1.5px solid transparent;
+      cursor: pointer; white-space: nowrap;
+      transition: all var(--transition);
+      display: inline-flex; align-items: center; gap: 6px;
+    }
+    .icctf-app .pill:hover { color: var(--color-accent); background: var(--color-accent-lt); }
+    .icctf-app .pill.active {
+      background: var(--color-accent); color: #fff;
+      border-color: var(--color-accent);
+    }
+    .icctf-app .pill .pill-count {
+      font-size: .6875rem; font-weight: 700;
+      background: rgba(0,0,0,.06); color: inherit;
+      padding: 1px 7px; border-radius: 50px;
+    }
+    .icctf-app .pill.active .pill-count { background: rgba(255,255,255,.22); color: #fff; }
+    .icctf-app .controls { display: flex; align-items: center; gap: 12px; }
+    .icctf-app .filter-search { position: relative; }
+    .icctf-app .filter-search input {
+      font-family: var(--font); font-size: .8125rem;
+      padding: 9px 16px 9px 38px;
+      border: 1.5px solid var(--color-border); border-radius: 50px;
+      outline: none; width: 240px;
+      transition: border-color var(--transition), box-shadow var(--transition);
+      color: var(--color-primary); background: var(--color-bg);
+    }
+    .icctf-app .filter-search input:focus {
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px rgba(55,178,67,.12);
+    }
+    .icctf-app .filter-search svg {
+      position: absolute; left: 12px; top: 50%; transform: translateY(-50%);
+      color: var(--color-muted); width: 16px; height: 16px; pointer-events: none;
+    }
+    .icctf-app .sort-select {
+      font-family: var(--font); font-size: .8125rem; font-weight: 500;
+      padding: 9px 36px 9px 14px;
+      border: 1.5px solid var(--color-border); border-radius: 50px;
+      outline: none; cursor: pointer;
+      color: var(--color-primary); background: var(--color-bg);
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%236b7b80' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 12px center;
+    }
+    .icctf-app .sort-select:focus { border-color: var(--color-accent); }
+
+    /* Main content */
+    .icctf-app .main { max-width: var(--max-w); margin: 0 auto; padding: 40px 24px 80px; }
+    .icctf-app .section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px; flex-wrap: wrap; gap: 12px; }
+    .icctf-app .section-title { font-size: 1.125rem; font-weight: 700; }
+    .icctf-app .section-title .section-title-accent { color: var(--color-accent); }
+    .icctf-app .section-count { font-size: .8125rem; color: var(--color-muted); font-weight: 500; }
+    .icctf-app .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 24px; }
+
+    .icctf-app .card {
+      background: var(--color-surface);
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      border: 1px solid var(--color-border);
+      display: flex; flex-direction: column;
+      transition: transform var(--transition), box-shadow var(--transition);
+      cursor: pointer;
+    }
+    .icctf-app .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+    .icctf-app .card-thumb { position: relative; padding-top: 56.25%; background: linear-gradient(135deg, #e8f0ea, #d4ead7); overflow: hidden; }
+    .icctf-app .card-thumb img { position: absolute; inset: 0; transition: transform .5s cubic-bezier(.4,0,.2,1); }
+    .icctf-app .card:hover .card-thumb img { transform: scale(1.06); }
+    .icctf-app .card-thumb-placeholder { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .icctf-app .card-thumb-placeholder svg { width: 48px; height: 48px; color: #37B243; opacity: .35; }
+    .icctf-app .card-category {
+      position: absolute; top: 14px; left: 14px;
+      background: rgba(255,255,255,.92); backdrop-filter: blur(8px);
+      color: var(--color-accent); font-size: .6875rem; font-weight: 700;
+      letter-spacing: .05em; text-transform: uppercase;
+      padding: 4px 10px; border-radius: var(--radius-tag);
+    }
+    .icctf-app .card-date-badge {
+      position: absolute; bottom: 14px; left: 14px;
+      background: rgba(27,38,41,.82); backdrop-filter: blur(8px);
+      color: #fff; font-size: .6875rem; font-weight: 600;
+      padding: 4px 10px; border-radius: var(--radius-tag);
+      display: inline-flex; align-items: center; gap: 5px;
+    }
+    .icctf-app .card-date-badge svg { width: 12px; height: 12px; }
+    .icctf-app .card-body { padding: 20px 22px; display: flex; flex-direction: column; flex: 1; gap: 10px; }
+    .icctf-app .card-meta { display: flex; align-items: center; gap: 10px; font-size: .75rem; color: var(--color-muted); font-weight: 500; flex-wrap: wrap; }
+    .icctf-app .card-meta .meta-item { display: inline-flex; align-items: center; gap: 5px; }
+    .icctf-app .card-meta svg { width: 13px; height: 13px; }
+    .icctf-app .card-meta .dot { color: var(--color-accent); }
+    .icctf-app .card-title {
+      font-size: 1rem; font-weight: 700; line-height: 1.4;
+      display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+      transition: color var(--transition);
+    }
+    .icctf-app .card:hover .card-title { color: var(--color-accent); }
+    .icctf-app .card-excerpt {
+      font-size: .8375rem; color: var(--color-muted); line-height: 1.6;
+      display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; flex: 1;
+    }
+    .icctf-app .card-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 2px; }
+    .icctf-app .card-tag {
+      font-size: .6875rem; font-weight: 600;
+      color: var(--color-accent); background: var(--color-accent-lt);
+      padding: 2px 8px; border-radius: 4px;
+    }
+    .icctf-app .card-footer {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 22px 18px; border-top: 1px solid var(--color-border);
+    }
+    .icctf-app .read-more {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: .8125rem; font-weight: 600; color: var(--color-accent);
+    }
+    .icctf-app .read-more svg { width: 14px; height: 14px; transition: transform var(--transition); }
+    .icctf-app .card:hover .read-more svg { transform: translateX(3px); }
+    .icctf-app .author-avatar {
+      width: 30px; height: 30px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dk));
+      display: flex; align-items: center; justify-content: center;
+      font-size: .6875rem; font-weight: 700; color: #fff;
+    }
+
+    /* Featured card (latest, large) */
+    .icctf-app .card.featured { grid-column: 1 / -1; flex-direction: row; }
+    .icctf-app .card.featured .card-thumb { width: 46%; padding-top: 0; min-height: 280px; flex-shrink: 0; }
+    .icctf-app .card.featured .card-title { font-size: 1.45rem; -webkit-line-clamp: 3; line-height: 1.3; }
+    .icctf-app .card.featured .card-excerpt { -webkit-line-clamp: 4; font-size: .9375rem; }
+    .icctf-app .card.featured .card-body { padding: 28px 32px; gap: 14px; }
+    .icctf-app .card.featured .featured-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--color-accent-lt); color: var(--color-accent);
+      padding: 4px 12px; border-radius: 50px;
+      font-size: .6875rem; font-weight: 700; letter-spacing: .06em;
+      text-transform: uppercase; align-self: flex-start;
+    }
+    .icctf-app .card.featured .featured-tag svg { width: 12px; height: 12px; }
+
+    /* Pagination */
+    .icctf-app .pagination {
+      display: flex; align-items: center; justify-content: center;
+      gap: 8px; margin-top: 56px; flex-wrap: wrap;
+    }
+    .icctf-app .page-btn {
+      min-width: 40px; height: 40px;
+      display: inline-flex; align-items: center; justify-content: center;
+      border-radius: 8px;
+      font-family: var(--font); font-size: 1rem; font-weight: 600;
+      color: var(--color-primary); background: var(--color-surface);
+      border: 1.5px solid var(--color-border);
+      cursor: pointer; transition: all var(--transition);
+      padding: 0 12px;
+    }
+    .icctf-app .page-btn:hover { border-color: var(--color-accent); color: var(--color-accent); background: var(--color-accent-lt); }
+    .icctf-app .page-btn.active { background: var(--color-accent); border-color: var(--color-accent); color: #fff; }
+    .icctf-app .page-btn.disabled { opacity: .35; pointer-events: none; }
+    .icctf-app .page-ellipsis { color: var(--color-muted); font-weight: 600; padding: 0 4px; }
+
+    /* Skeleton */
+    @keyframes icctfShimmer { 0% { background-position: -600px 0; } 100% { background-position: 600px 0; } }
+    .icctf-app .skeleton {
+      background: linear-gradient(90deg, #e8ecea 25%, #f5f7f5 50%, #e8ecea 75%);
+      background-size: 600px 100%;
+      animation: icctfShimmer 1.4s infinite;
+      border-radius: 6px;
+    }
+    .icctf-app .skeleton-card { border-radius: var(--radius-card); overflow: hidden; border: 1px solid var(--color-border); background: var(--color-surface); }
+    .icctf-app .skeleton-card .sk-thumb { height: 180px; }
+    .icctf-app .skeleton-card .sk-body { padding: 20px 22px; display: flex; flex-direction: column; gap: 10px; }
+    .icctf-app .skeleton-card .sk-line { height: 14px; border-radius: 4px; }
+    .icctf-app .skeleton-card .sk-line.w60 { width: 60%; }
+    .icctf-app .skeleton-card .sk-line.w80 { width: 80%; }
+    .icctf-app .skeleton-card .sk-line.w100 { width: 100%; }
+    .icctf-app .skeleton-card .sk-line.w40 { width: 40%; }
+    .icctf-app .skeleton-pill {
+      height: 30px; width: 90px; border-radius: 50px;
+      background: linear-gradient(90deg, #e8ecea 25%, #f5f7f5 50%, #e8ecea 75%);
+      background-size: 600px 100%; animation: icctfShimmer 1.4s infinite;
+    }
+
+    /* Empty + error */
+    .icctf-app .empty-state { text-align: center; padding: 72px 24px; display: none; }
+    .icctf-app .empty-state svg { width: 64px; height: 64px; color: #bdd4c0; margin: 0 auto 20px; }
+    .icctf-app .empty-state h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+    .icctf-app .empty-state p { color: var(--color-muted); font-size: .9rem; margin-bottom: 18px; }
+    .icctf-app .empty-state button {
+      font-family: var(--font); font-size: .8125rem; font-weight: 600;
+      padding: 9px 22px; border-radius: 50px;
+      background: var(--color-accent); color: #fff;
+      cursor: pointer; transition: background var(--transition);
+    }
+    .icctf-app .empty-state button:hover { background: var(--color-accent-dk); }
+    .icctf-app .error-banner {
+      background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px;
+      padding: 12px 20px; margin-bottom: 24px;
+      font-size: .85rem; color: #856404; display: none;
+    }
+    .icctf-app .error-banner a { color: #856404; font-weight: 600; text-decoration: underline; cursor: pointer; }
+
+    /* Back to top */
+    .icctf-app .back-top {
+      position: fixed; bottom: 28px; right: 28px;
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--color-accent); color: #fff; border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 16px rgba(55,178,67,.4);
+      opacity: 0; pointer-events: none;
+      transition: opacity var(--transition), transform var(--transition);
+      z-index: 200;
+    }
+    .icctf-app .back-top.visible { opacity: 1; pointer-events: auto; }
+    .icctf-app .back-top:hover { transform: translateY(-3px); }
+    .icctf-app .back-top svg { width: 20px; height: 20px; }
+
+    /* Footer */
+    .icctf-app .icctf-footer {
+      background: var(--color-primary); color: rgba(255,255,255,.6);
+      text-align: center; padding: 28px 24px; font-size: .8125rem;
+    }
+    .icctf-app .icctf-footer a { color: var(--color-accent); }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .icctf-app .card.featured { flex-direction: column; }
+      .icctf-app .card.featured .card-thumb { width: 100%; padding-top: 52%; min-height: unset; }
+      .icctf-app .card.featured .card-body { padding: 22px 22px; }
+      .icctf-app .card.featured .card-title { font-size: 1.2rem; }
+    }
+    @media (max-width: 768px) {
+      .icctf-app .nav-links { display: none; }
+      .icctf-app .nav-hamburger { display: flex; }
+      .icctf-app .hero { padding: 56px 20px 48px; }
+      .icctf-app .filter-bar { position: static; }
+      .icctf-app .filter-inner { padding: 14px 16px; gap: 12px; }
+      .icctf-app .filter-search input { width: 100%; }
+      .icctf-app .controls { width: 100%; }
+      .icctf-app .filter-search { flex: 1; }
+      .icctf-app .cards-grid { grid-template-columns: 1fr; }
+      .icctf-app .pill { font-size: .75rem; padding: 6px 12px; }
+    }
+    @media (max-width: 480px) {
+      .icctf-app .main { padding: 28px 16px 60px; }
+      .icctf-app .hero h1 { font-size: 1.75rem; }
+      .icctf-app .hero-stats { gap: 28px; }
+      .icctf-app .hero-stat strong { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- SEMUA konten dibungkus dalam .icctf-app supaya CSS scope kuat
+     dan tidak terpengaruh tema WordPress. -->
+<div class="icctf-app">
+
+  <header class="site-header">
+    <nav class="nav-inner">
+      <a href="https://www.icctf.or.id" class="nav-logo">ICCTF<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="https://www.icctf.or.id">Home</a></li>
+        <li><a href="https://www.icctf.or.id/about">About</a></li>
+        <li><a href="https://www.icctf.or.id/programs">Programs</a></li>
+        <li><a href="https://www.icctf.or.id/newsevents" class="active">News &amp; Events</a></li>
+        <li><a href="https://www.icctf.or.id/references">References</a></li>
+        <li><a href="https://www.icctf.or.id/contact">Contact</a></li>
+        <li><a href="#" class="nav-cta">Get Involved</a></li>
+      </ul>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M3 3h18v18H3z"/><path d="M3 9h18M9 21V9"/>
+        </svg>
+        Newsroom &amp; Events Hub
+      </div>
+      <h1>Our <em>News</em> &amp; Events</h1>
+      <p>Berita terbaru, liputan media, dan kegiatan ICCTF dalam mendukung pendanaan iklim dan pembangunan rendah karbon di Indonesia.</p>
+      <div class="hero-stats">
+        <div class="hero-stat"><strong id="stat-total">0</strong><span>Total Posts</span></div>
+        <div class="hero-stat"><strong id="stat-events">0</strong><span>Events</span></div>
+        <div class="hero-stat"><strong>2009</strong><span>Sejak Tahun</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="filter-bar">
+    <div class="filter-inner">
+      <div class="filter-pills" id="filterPills" role="tablist" aria-label="Category filters">
+        <!-- Skeleton pills sampai categories ter-load -->
+        <div class="skeleton-pill"></div>
+        <div class="skeleton-pill" style="width:110px;"></div>
+        <div class="skeleton-pill" style="width:80px;"></div>
+        <div class="skeleton-pill" style="width:130px;"></div>
+      </div>
+      <div class="controls">
+        <div class="filter-search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+          </svg>
+          <input type="text" id="searchInput" placeholder="Cari berita..." aria-label="Search posts" />
+        </div>
+        <select class="sort-select" id="sortSelect" aria-label="Sort order">
+          <option value="desc">Terbaru</option>
+          <option value="asc">Terlama</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <main class="main">
+    <div class="error-banner" id="errorBanner"></div>
+    <div class="section-header">
+      <h2 class="section-title" id="sectionTitle">
+        <span class="section-title-accent">All</span> News &amp; Events
+      </h2>
+      <span class="section-count" id="countLabel">Loading...</span>
+    </div>
+    <div class="cards-grid" id="cardsGrid"></div>
+    <div class="empty-state" id="emptyState">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+      </svg>
+      <h3>Tidak ada berita yang ditemukan</h3>
+      <p>Coba ubah kata kunci pencarian atau pilih kategori lain.</p>
+      <button onclick="resetFilters()">Reset filter</button>
+    </div>
+    <nav class="pagination" id="pagination" aria-label="Pagination"></nav>
+  </main>
+
+  <button class="back-top" id="backTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
+
+  <footer class="icctf-footer">
+    <p>&copy; 2026 <a href="https://www.icctf.or.id">ICCTF &ndash; Indonesia Climate Change Trust Fund</a>. All rights reserved.</p>
+  </footer>
+
+</div><!-- /.icctf-app -->
+
+<script>
+/* ═══════════════════════════════════════════════════════════════════════
+   CONFIGURATION – WordPress REST API Integration
+   ═══════════════════════════════════════════════════════════════════════ */
+const CONFIG = {
+  siteUrl: 'https://www.icctf.or.id',
+  postType: 'posts',
+  perPage: 9,
+  maxPages: 40,
+  embed: true,
+  /* Kategori yang ingin di-surface sebagai filter pills.
+     Daftar ini di-fallback jika /wp/v2/categories gagal di-fetch. */
+  pinnedCategorySlugs: [
+    'news', 'events', 'news-coverage', 'marine',
+    'project', 'adaptation-resilience', 'land-based-mitigation', 'energy',
+  ],
+  /* Slug kategori yang dianggap "Events" untuk hero counter. */
+  eventsCategorySlug: 'events',
+};
+
+function buildApiUrl({ page = 1, search = '', categoryId = null, order = 'desc' } = {}) {
+  const base = `${CONFIG.siteUrl}/wp-json/wp/v2/${CONFIG.postType}`;
+  const params = new URLSearchParams({
+    per_page: CONFIG.perPage,
+    page: page,
+    _embed: CONFIG.embed ? '1' : '',
+    orderby: 'date',
+    order: order,
+  });
+  if (search) params.set('search', search);
+  if (categoryId) params.set('categories', categoryId);
+  return `${base}?${params.toString()}`;
+}
+
+let state = {
+  posts: [],
+  categories: [],          // [{id, name, slug, count}]
+  totalPosts: 0,
+  totalPages: 0,
+  totalAllPosts: 0,        // total tanpa filter, untuk hero counter
+  totalEvents: 0,          // total kategori "events"
+  currentPage: 1,
+  currentSearch: '',
+  currentCategory: null,   // null = All; else category id
+  currentOrder: 'desc',
+  loading: false,
+  usingFallback: false,
+  fetchToken: 0,           // monotonic token; stale responses dibuang
+};
+</script>
+
+<script>
+/* ═══════════════════════════════════════════════════════════════════════
+   FALLBACK DATA – Used when API is unavailable (403/CORS/offline)
+   ═══════════════════════════════════════════════════════════════════════ */
+const FALLBACK_CATEGORIES = [
+  { id: 1,   name: 'News',                    slug: 'news',                   count: 270 },
+  { id: 102, name: 'News Coverage',           slug: 'news-coverage',          count: 91  },
+  { id: 109, name: 'Marine',                  slug: 'marine',                 count: 84  },
+  { id: 523, name: 'Events',                  slug: 'events',                 count: 31  },
+  { id: 105, name: 'Project',                 slug: 'project',                count: 31  },
+  { id: 107, name: 'Adaptation & Resilience', slug: 'adaptation-resilience',  count: 21  },
+  { id: 106, name: 'Land-based Mitigation',   slug: 'land-based-mitigation',  count: 13  },
+  { id: 108, name: 'Energy',                  slug: 'energy',                 count: 3   },
+];
+
+const FALLBACK_POSTS = [
+  {
+    id: 1001, featured: true,
+    category: 'Events', categoryId: 523,
+    title: 'Workshop Validasi Peta Jalan Karbon Biru Indonesia',
+    excerpt: 'Pemaparan dan validasi rancangan Peta Jalan Perlindungan dan Pengelolaan Ekosistem Karbon Biru Indonesia bersama Kementerian PPN/Bappenas dan WRI Indonesia.',
+    date: '2026-04-30',
+    author: 'ICCTF Secretariat',
+    thumb: 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=800&q=80',
+    link: '#', tags: ['AFD', 'Events'], readingMin: 5,
+  },
+  {
+    id: 1002, category: 'Events', categoryId: 523,
+    title: 'Diseminasi Strategi Pengembangan Pendanaan Biru – Raja Ampat',
+    excerpt: 'Kegiatan diseminasi strategi pendanaan biru untuk pengelolaan Kawasan Konservasi Raja Ampat melalui Proyek LAUTRA.',
+    date: '2026-04-15',
+    author: 'LAUTRA Team',
+    thumb: 'https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=600&q=80',
+    link: '#', tags: ['LAUTRA', 'Marine'], readingMin: 4,
+  },
+  {
+    id: 1003, category: 'Marine', categoryId: 109,
+    title: 'Coral Bond &amp; Blue Carbon: Inovasi Pendanaan Konservasi Laut',
+    excerpt: 'Analisis instrumen pendanaan inovatif untuk konservasi ekosistem pesisir dan laut di Indonesia.',
+    date: '2026-03-22',
+    author: 'Marine Program',
+    thumb: 'https://images.unsplash.com/photo-1582967788606-a171c1080cb0?w=600&q=80',
+    link: '#', tags: ['Marine', 'Blue Carbon'], readingMin: 6,
+  },
+  {
+    id: 1004, category: 'News', categoryId: 1,
+    title: 'ICCTF dan Bappenas Bahas Strategi Implementasi NDC 2030',
+    excerpt: 'Pertemuan koordinasi mengenai jalur pencapaian target NDC Indonesia dan peran pendanaan iklim dalam mendukung dekarbonisasi.',
+    date: '2026-03-10',
+    author: 'Policy Team',
+    thumb: 'https://images.unsplash.com/photo-1531346878377-a5be20888e57?w=600&q=80',
+    link: '#', tags: ['NDC', 'Policy'], readingMin: 5,
+  },
+  {
+    id: 1005, category: 'Project', categoryId: 105,
+    title: 'Penguatan BLUD untuk Pengelolaan Kawasan Konservasi',
+    excerpt: 'Peningkatan kapasitas Badan Layanan Umum Daerah dalam pengelolaan keuangan kawasan konservasi yang berkelanjutan.',
+    date: '2026-02-28',
+    author: 'Project Unit',
+    thumb: 'https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?w=600&q=80',
+    link: '#', tags: ['BLUD', 'Conservation'], readingMin: 4,
+  },
+  {
+    id: 1006, category: 'News Coverage', categoryId: 102,
+    title: 'ICCTF Dorong Peran Pendanaan Hijau di COP30',
+    excerpt: 'Liputan media nasional mengenai posisi Indonesia dan peran ICCTF dalam negosiasi pendanaan iklim di Conference of Parties ke-30.',
+    date: '2026-02-15',
+    author: 'Comms',
+    thumb: 'https://images.unsplash.com/photo-1569163139394-de4798aa62b6?w=600&q=80',
+    link: '#', tags: ['COP30', 'Press'], readingMin: 3,
+  },
+  {
+    id: 1007, category: 'Adaptation & Resilience', categoryId: 107,
+    title: 'Membangun Ketahanan Komunitas Pesisir di NTT',
+    excerpt: 'Program adaptasi berbasis ekosistem untuk meningkatkan ketahanan masyarakat pesisir Nusa Tenggara Timur terhadap dampak perubahan iklim.',
+    date: '2026-02-02',
+    author: 'Adaptation Team',
+    thumb: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600&q=80',
+    link: '#', tags: ['Adaptation', 'NTT'], readingMin: 5,
+  },
+  {
+    id: 1008, category: 'Land-based Mitigation', categoryId: 106,
+    title: 'Restorasi Gambut: Capaian dan Pelajaran 2025',
+    excerpt: 'Evaluasi capaian restorasi lahan gambut di Kalimantan dan Sumatra, dengan rekomendasi penguatan tata kelola berbasis lanskap.',
+    date: '2026-01-20',
+    author: 'Land Team',
+    thumb: 'https://images.unsplash.com/photo-1448375240586-882707db888b?w=600&q=80',
+    link: '#', tags: ['Peatland', 'REDD+'], readingMin: 6,
+  },
+  {
+    id: 1009, category: 'Energy', categoryId: 108,
+    title: 'Transisi Energi Bersih di Pulau Kecil',
+    excerpt: 'Studi kelayakan transisi energi terbarukan untuk pulau-pulau kecil dengan ketergantungan tinggi pada solar diesel.',
+    date: '2026-01-08',
+    author: 'Energy Team',
+    thumb: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=600&q=80',
+    link: '#', tags: ['Renewable', 'Islands'], readingMin: 4,
+  },
+];
+</script>
+
+<script>
+/* ═══════════════════════════════════════════════════════════════════════
+   API FUNCTIONS – WordPress REST API Integration
+   ═══════════════════════════════════════════════════════════════════════ */
+async function fetchCategories() {
+  try {
+    const url = `${CONFIG.siteUrl}/wp-json/wp/v2/categories?per_page=50&hide_empty=true`;
+    const res = await fetch(url, { signal: AbortSignal.timeout(8000) });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const raw = await res.json();
+    const cats = raw.map(c => ({
+      id: c.id, name: decodeHtml(c.name), slug: c.slug, count: c.count,
+    }));
+    /* Filter ke pinned slugs + urutkan sesuai urutan pinned. */
+    const order = CONFIG.pinnedCategorySlugs;
+    const filtered = cats
+      .filter(c => order.includes(c.slug))
+      .sort((a, b) => order.indexOf(a.slug) - order.indexOf(b.slug));
+    state.categories = filtered.length ? filtered : cats.slice(0, 6);
+
+    const events = cats.find(c => c.slug === CONFIG.eventsCategorySlug);
+    if (events) state.totalEvents = events.count;
+
+    /* Total semua kategori "news" sebagai approx total posts untuk hero. */
+    const totalAll = cats.find(c => c.slug === 'news');
+    if (totalAll) state.totalAllPosts = Math.max(state.totalAllPosts, totalAll.count);
+  } catch (e) {
+    console.warn('[ICCTF] Categories fetch failed, using fallback:', e.message);
+    state.categories = FALLBACK_CATEGORIES.filter(c =>
+      CONFIG.pinnedCategorySlugs.includes(c.slug)
+    );
+    state.totalEvents = (FALLBACK_CATEGORIES.find(c => c.slug === 'events') || {}).count || 0;
+  }
+  renderCategoryPills();
+}
+
+async function fetchPosts({ page = 1, search = '', categoryId = null, order = 'desc' } = {}) {
+  state.loading = true;
+  const token = ++state.fetchToken;
+  showSkeletons();
+
+  try {
+    const url = buildApiUrl({ page, search, categoryId, order });
+    console.log('[ICCTF] Fetching:', url);
+    const res = await fetch(url, { signal: AbortSignal.timeout(10000) });
+    if (!res.ok) throw new Error(`HTTP ${res.status}: ${res.statusText}`);
+
+    /* Drop stale response jika user sudah memicu fetch baru di antaranya. */
+    if (token !== state.fetchToken) {
+      console.log('[ICCTF] Stale response dropped (token', token, 'vs', state.fetchToken, ')');
+      return;
+    }
+
+    state.totalPosts = parseInt(res.headers.get('X-WP-Total') || '0', 10);
+    state.totalPages = parseInt(res.headers.get('X-WP-TotalPages') || '1', 10);
+
+    /* Track total posts (tanpa filter) untuk hero counter. */
+    if (!categoryId && !search) {
+      state.totalAllPosts = state.totalPosts;
+    }
+
+    const rawPosts = await res.json();
+    if (token !== state.fetchToken) return; // double-check after json parse
+
+    state.posts = rawPosts.map((post, idx) =>
+      transformWPPost(post, idx === 0 && page === 1 && !search)
+    );
+    state.currentPage = page;
+    state.usingFallback = false;
+
+    hideError();
+    renderAll();
+  } catch (e) {
+    if (token !== state.fetchToken) return; // jangan timpa state baru
+    console.warn('[ICCTF] API fetch failed, using fallback data:', e.message);
+    useFallbackData({ search, categoryId, order });
+  } finally {
+    state.loading = false;
+  }
+}
+
+function transformWPPost(post, isFeatured = false) {
+  /* Cari URL thumbnail terbaik dari _embedded media. */
+  let thumb = '';
+  if (post._embedded && post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0]) {
+    const media = post._embedded['wp:featuredmedia'][0];
+    if (media.media_details && media.media_details.sizes) {
+      const sizes = media.media_details.sizes;
+      thumb = (sizes.medium_large || sizes.large || sizes.medium || sizes.full || {}).source_url
+            || media.source_url || '';
+    } else {
+      thumb = media.source_url || '';
+    }
+  }
+
+  /* Cari category utama + tags dari _embedded term.
+     Prioritas pemilihan badge category:
+       1) Jika sedang difilter ke suatu kategori, gunakan kategori itu (UX konsisten).
+       2) Else, kategori paling spesifik (bukan generic "News").
+       3) Fallback ke first category. */
+  let categoryName = 'News';
+  let categoryId = null;
+  let allCategories = [];
+  let tags = [];
+  if (post._embedded && post._embedded['wp:term']) {
+    post._embedded['wp:term'].forEach(termGroup => {
+      if (!termGroup || !termGroup.length) return;
+      const first = termGroup[0];
+      if (first.taxonomy === 'category') {
+        allCategories = termGroup.map(t => ({ id: t.id, name: decodeHtml(t.name), slug: t.slug }));
+      }
+      if (first.taxonomy === 'post_tag') {
+        tags = termGroup.map(t => decodeHtml(t.name));
+      }
+    });
+  }
+  if (allCategories.length) {
+    let chosen = null;
+    if (state.currentCategory) {
+      chosen = allCategories.find(c => c.id === state.currentCategory);
+    }
+    if (!chosen) {
+      chosen = allCategories.find(c => c.slug !== 'news') || allCategories[0];
+    }
+    categoryName = chosen.name;
+    categoryId = chosen.id;
+  }
+
+  const excerptText = post.excerpt
+    ? stripHtml(post.excerpt.rendered).trim().replace(/&hellip;|…/g, '…')
+    : '';
+  const contentText = post.content ? stripHtml(post.content.rendered) : '';
+  const readingMin = estimateReadingMinutes(contentText || excerptText);
+
+  return {
+    id: post.id,
+    featured: isFeatured,
+    category: categoryName,
+    categoryId: categoryId,
+    title: post.title ? decodeHtml(post.title.rendered) : 'Untitled',
+    excerpt: excerptText,
+    date: post.date || '',
+    author: (post._embedded && post._embedded.author && post._embedded.author[0])
+      ? decodeHtml(post._embedded.author[0].name) : 'ICCTF',
+    thumb: thumb,
+    link: post.link || '#',
+    tags: tags.slice(0, 3),
+    readingMin: readingMin,
+  };
+}
+
+function useFallbackData({ search = '', categoryId = null, order = 'desc' } = {}) {
+  state.usingFallback = true;
+  showError('Live data unavailable. Showing cached news. <a onclick="retryFetch()">Retry</a>');
+
+  let filtered = [...FALLBACK_POSTS];
+  if (categoryId) {
+    filtered = filtered.filter(p => p.categoryId === categoryId);
+  }
+  if (search) {
+    const q = search.toLowerCase();
+    filtered = filtered.filter(p =>
+      p.title.toLowerCase().includes(q) ||
+      p.excerpt.toLowerCase().includes(q) ||
+      (p.tags || []).some(t => t.toLowerCase().includes(q))
+    );
+  }
+  /* Sort */
+  filtered.sort((a, b) => {
+    const da = new Date(a.date).getTime();
+    const db = new Date(b.date).getTime();
+    return order === 'asc' ? da - db : db - da;
+  });
+
+  state.totalPosts = filtered.length;
+  state.totalPages = Math.max(1, Math.ceil(filtered.length / CONFIG.perPage));
+  if (!categoryId && !search) state.totalAllPosts = Math.max(state.totalAllPosts, FALLBACK_POSTS.length);
+
+  const start = (state.currentPage - 1) * CONFIG.perPage;
+  state.posts = filtered.slice(start, start + CONFIG.perPage);
+  if (state.posts.length > 0 && state.currentPage === 1 && !search) {
+    state.posts[0].featured = true;
+  } else {
+    state.posts.forEach(p => p.featured = false);
+  }
+
+  renderAll();
+}
+
+function retryFetch() {
+  hideError();
+  fetchPosts({
+    page: state.currentPage,
+    search: state.currentSearch,
+    categoryId: state.currentCategory,
+    order: state.currentOrder,
+  });
+}
+</script>
+
+<script>
+/* ═══════════════════════════════════════════════════════════════════════
+   UTILITIES
+   ═══════════════════════════════════════════════════════════════════════ */
+function stripHtml(html) {
+  const tmp = document.createElement('div');
+  tmp.innerHTML = html || '';
+  return tmp.textContent || tmp.innerText || '';
+}
+function decodeHtml(s) {
+  const t = document.createElement('textarea');
+  t.innerHTML = s || '';
+  return t.value;
+}
+function estimateReadingMinutes(text) {
+  if (!text) return 1;
+  const words = text.trim().split(/\s+/).length;
+  return Math.max(1, Math.round(words / 220));
+}
+function formatDate(dateStr) {
+  if (!dateStr) return '';
+  const d = new Date(dateStr);
+  if (isNaN(d.getTime())) return '';
+  return d.toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+function formatDateShort(dateStr) {
+  if (!dateStr) return '';
+  const d = new Date(dateStr);
+  if (isNaN(d.getTime())) return '';
+  return d.toLocaleDateString('id-ID', { month: 'short', day: 'numeric', year: 'numeric' });
+}
+const initials = s => (s || 'IC').split(' ').slice(0, 2).map(w => w[0] || '').join('').toUpperCase();
+</script>
+
+<script>
+/* ═══════════════════════════════════════════════════════════════════════
+   RENDER FUNCTIONS
+   ═══════════════════════════════════════════════════════════════════════ */
+function renderCategoryPills() {
+  const wrap = document.getElementById('filterPills');
+  const totalAll = state.totalAllPosts || state.categories.reduce((s, c) => s + (c.count || 0), 0);
+  let html = `
+    <button class="pill ${state.currentCategory === null ? 'active' : ''}"
+            data-cat-id="all" role="tab" aria-selected="${state.currentCategory === null}">
+      All <span class="pill-count">${totalAll}</span>
+    </button>`;
+  state.categories.forEach(c => {
+    const active = state.currentCategory === c.id;
+    html += `
+      <button class="pill ${active ? 'active' : ''}" data-cat-id="${c.id}" data-cat-name="${c.name}"
+              role="tab" aria-selected="${active}">
+        ${c.name}<span class="pill-count">${c.count}</span>
+      </button>`;
+  });
+  wrap.innerHTML = html;
+
+  wrap.querySelectorAll('.pill').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const raw = btn.dataset.catId;
+      const catId = raw === 'all' ? null : parseInt(raw, 10);
+      if (state.currentCategory === catId) return;
+      state.currentCategory = catId;
+      state.currentPage = 1;
+      updateSectionTitle();
+      if (state.usingFallback) {
+        useFallbackData({ search: state.currentSearch, categoryId: catId, order: state.currentOrder });
+      } else {
+        fetchPosts({ page: 1, search: state.currentSearch, categoryId: catId, order: state.currentOrder });
+      }
+      renderCategoryPills(); // re-render untuk update active state
+    });
+  });
+}
+
+function updateSectionTitle() {
+  const el = document.getElementById('sectionTitle');
+  if (state.currentCategory === null) {
+    el.innerHTML = `<span class="section-title-accent">All</span> News &amp; Events`;
+    return;
+  }
+  const cat = state.categories.find(c => c.id === state.currentCategory);
+  const name = cat ? cat.name : 'Filtered';
+  el.innerHTML = `<span class="section-title-accent">${name}</span> Posts`;
+}
+
+function renderCard(post) {
+  const isFeatured = post.featured ? 'featured' : '';
+  const thumb = post.thumb
+    ? `<img src="${post.thumb}" alt="${post.title.replace(/"/g, '&quot;')}" loading="lazy" />`
+    : `<div class="card-thumb-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>`;
+  const tags = (post.tags || []).slice(0, 3)
+    .map(t => `<span class="card-tag">${t}</span>`).join('');
+
+  const featuredTag = post.featured
+    ? `<span class="featured-tag">
+         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+         Featured
+       </span>` : '';
+
+  return `
+    <article class="card ${isFeatured}" data-id="${post.id}" onclick="window.open('${post.link}','_blank','noopener')">
+      <div class="card-thumb">
+        ${thumb}
+        <span class="card-category">${post.category}</span>
+        <span class="card-date-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          ${formatDateShort(post.date)}
+        </span>
+      </div>
+      <div style="display:flex;flex-direction:column;flex:1;">
+        <div class="card-body">
+          ${featuredTag}
+          <div class="card-meta">
+            <span class="meta-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              ${post.readingMin || 1} min read
+            </span>
+            <span class="dot">&bull;</span>
+            <span class="meta-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              ${post.author}
+            </span>
+          </div>
+          <h3 class="card-title">${post.title}</h3>
+          <p class="card-excerpt">${post.excerpt || 'Klik untuk membaca selengkapnya di icctf.or.id.'}</p>
+          ${tags ? `<div class="card-tags">${tags}</div>` : ''}
+        </div>
+        <div class="card-footer">
+          <a href="${post.link}" target="_blank" rel="noopener" class="read-more" onclick="event.stopPropagation()">
+            Read More &raquo;
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <div class="author-avatar" title="${post.author}">${initials(post.author)}</div>
+        </div>
+      </div>
+    </article>`;
+}
+
+function showSkeletons() {
+  const grid = document.getElementById('cardsGrid');
+  let html = '';
+  for (let i = 0; i < CONFIG.perPage; i++) {
+    html += `<div class="skeleton-card"><div class="sk-thumb skeleton" style="height:180px;"></div><div class="sk-body"><div class="sk-line w60 skeleton"></div><div class="sk-line w100 skeleton" style="height:18px;"></div><div class="sk-line w100 skeleton"></div><div class="sk-line w80 skeleton"></div><div class="sk-line w40 skeleton"></div></div></div>`;
+  }
+  grid.innerHTML = html;
+  document.getElementById('emptyState').style.display = 'none';
+}
+
+function renderAll() {
+  renderCards();
+  renderPagination();
+  updateCount();
+  updateHeroStats();
+}
+
+function renderCards() {
+  const grid = document.getElementById('cardsGrid');
+  const empty = document.getElementById('emptyState');
+  if (state.posts.length === 0) {
+    grid.innerHTML = '';
+    empty.style.display = 'block';
+    return;
+  }
+  empty.style.display = 'none';
+  grid.innerHTML = state.posts.map(renderCard).join('');
+  /* Stagger fade-in animation */
+  grid.querySelectorAll('.card').forEach((c, i) => {
+    c.style.opacity = '0';
+    c.style.transform = 'translateY(16px)';
+    requestAnimationFrame(() => {
+      c.style.transition = `opacity .3s ease ${i * 50}ms, transform .3s ease ${i * 50}ms`;
+      c.style.opacity = '1';
+      c.style.transform = 'translateY(0)';
+    });
+  });
+}
+
+function updateCount() {
+  const label = document.getElementById('countLabel');
+  if (state.totalPosts === 0) { label.textContent = '0 results'; return; }
+  const start = (state.currentPage - 1) * CONFIG.perPage + 1;
+  const end = Math.min(state.currentPage * CONFIG.perPage, state.totalPosts);
+  label.textContent = `Showing ${start}\u2013${end} of ${state.totalPosts}`;
+}
+
+function updateHeroStats() {
+  const elTotal = document.getElementById('stat-total');
+  const elEvents = document.getElementById('stat-events');
+  if (state.totalAllPosts) elTotal.textContent = state.totalAllPosts + '+';
+  if (state.totalEvents) elEvents.textContent = state.totalEvents + '+';
+}
+</script>
+
+<script>
+/* ═══════════════════════════════════════════════════════════════════════
+   PAGINATION
+   ═══════════════════════════════════════════════════════════════════════ */
+function renderPagination() {
+  const nav = document.getElementById('pagination');
+  const tp = Math.min(state.totalPages, CONFIG.maxPages);
+  if (tp <= 1) { nav.innerHTML = ''; return; }
+
+  let html = `<button class="page-btn ${state.currentPage === 1 ? 'disabled' : ''}" data-page="${state.currentPage - 1}">&laquo; Prev</button>`;
+  const pages = [];
+  if (tp <= 7) {
+    for (let i = 1; i <= tp; i++) pages.push(i);
+  } else {
+    pages.push(1);
+    if (state.currentPage > 3) pages.push('...');
+    for (let i = Math.max(2, state.currentPage - 1); i <= Math.min(tp - 1, state.currentPage + 1); i++) pages.push(i);
+    if (state.currentPage < tp - 2) pages.push('...');
+    pages.push(tp);
+  }
+  pages.forEach(p => {
+    if (p === '...') html += `<span class="page-ellipsis">&hellip;</span>`;
+    else html += `<button class="page-btn ${p === state.currentPage ? 'active' : ''}" data-page="${p}">${p}</button>`;
+  });
+  html += `<button class="page-btn ${state.currentPage === tp ? 'disabled' : ''}" data-page="${state.currentPage + 1}">Next &raquo;</button>`;
+  nav.innerHTML = html;
+
+  nav.querySelectorAll('[data-page]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const p = parseInt(btn.dataset.page, 10);
+      if (isNaN(p) || p < 1 || p > tp) return;
+      state.currentPage = p;
+      if (state.usingFallback) {
+        useFallbackData({
+          search: state.currentSearch,
+          categoryId: state.currentCategory,
+          order: state.currentOrder,
+        });
+      } else {
+        fetchPosts({
+          page: p,
+          search: state.currentSearch,
+          categoryId: state.currentCategory,
+          order: state.currentOrder,
+        });
+      }
+      document.querySelector('.filter-bar').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+}
+
+function showError(msg) {
+  const el = document.getElementById('errorBanner');
+  el.innerHTML = msg;
+  el.style.display = 'block';
+}
+function hideError() {
+  document.getElementById('errorBanner').style.display = 'none';
+}
+</script>
+
+<script>
+/* ═══════════════════════════════════════════════════════════════════════
+   EVENT LISTENERS & INIT
+   ═══════════════════════════════════════════════════════════════════════ */
+function resetFilters() {
+  state.currentSearch = '';
+  state.currentCategory = null;
+  state.currentPage = 1;
+  state.currentOrder = 'desc';
+  document.getElementById('searchInput').value = '';
+  document.getElementById('sortSelect').value = 'desc';
+  updateSectionTitle();
+  renderCategoryPills();
+  if (state.usingFallback) useFallbackData({});
+  else fetchPosts({});
+}
+
+let debounceTimer;
+document.getElementById('searchInput').addEventListener('input', e => {
+  clearTimeout(debounceTimer);
+  debounceTimer = setTimeout(() => {
+    state.currentSearch = e.target.value.trim();
+    state.currentPage = 1;
+    if (state.usingFallback) {
+      useFallbackData({
+        search: state.currentSearch,
+        categoryId: state.currentCategory,
+        order: state.currentOrder,
+      });
+    } else {
+      fetchPosts({
+        page: 1,
+        search: state.currentSearch,
+        categoryId: state.currentCategory,
+        order: state.currentOrder,
+      });
+    }
+  }, 350);
+});
+
+document.getElementById('sortSelect').addEventListener('change', e => {
+  state.currentOrder = e.target.value === 'asc' ? 'asc' : 'desc';
+  state.currentPage = 1;
+  if (state.usingFallback) {
+    useFallbackData({
+      search: state.currentSearch,
+      categoryId: state.currentCategory,
+      order: state.currentOrder,
+    });
+  } else {
+    fetchPosts({
+      page: 1,
+      search: state.currentSearch,
+      categoryId: state.currentCategory,
+      order: state.currentOrder,
+    });
+  }
+});
+
+const backTop = document.getElementById('backTop');
+window.addEventListener('scroll', () => {
+  backTop.classList.toggle('visible', window.scrollY > 400);
+}, { passive: true });
+backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+document.getElementById('hamburger').addEventListener('click', () => {
+  const links = document.querySelector('.icctf-app .nav-links');
+  const open = links.style.display === 'flex';
+  links.style.cssText = open ? ''
+    : 'display:flex;flex-direction:column;position:absolute;top:66px;left:0;right:0;background:#fff;padding:16px 24px 24px;border-bottom:1px solid var(--color-border);gap:16px;z-index:99;';
+});
+
+function animateCounter(el, target) {
+  if (!target) return;
+  let cur = 0;
+  const step = Math.max(1, Math.ceil(target / 30));
+  const timer = setInterval(() => {
+    cur = Math.min(cur + step, target);
+    el.textContent = cur + '+';
+    if (cur >= target) clearInterval(timer);
+  }, 40);
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
+  /* Render fallback pills immediately so UI isn't empty if network is slow. */
+  state.categories = FALLBACK_CATEGORIES.filter(c =>
+    CONFIG.pinnedCategorySlugs.includes(c.slug)
+  );
+  renderCategoryPills();
+
+  /* Then fetch live categories + posts in parallel. */
+  await Promise.all([fetchCategories(), fetchPosts({})]);
+  renderCategoryPills();
+  updateHeroStats();
+
+  /* Animate hero counters when they scroll into view. */
+  const heroStats = document.querySelector('.hero-stats');
+  if (heroStats) {
+    const obs = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting) {
+        animateCounter(
+          document.getElementById('stat-total'),
+          state.totalAllPosts || FALLBACK_POSTS.length
+        );
+        animateCounter(
+          document.getElementById('stat-events'),
+          state.totalEvents || 0
+        );
+        obs.disconnect();
+      }
+    });
+    obs.observe(heroStats);
+  }
+});
+</script>
+</body>
+</html>
